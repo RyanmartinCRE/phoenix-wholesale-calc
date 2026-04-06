@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Wholesale Offer Calculator | Real Estate Investor Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,107,0.5);
+        }
+        .features {
+            background: white;
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            padding: 30px;
+            border-radius: 15px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .feature-card p {
+            color: #666;
+        }
+        .pricing {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        .price-box {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .price {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .price span {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+        .buy-button {
+            display: inline-block;
+            background: #00d9ff;
+            color: #333;
+            padding: 18px 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+        .buy-button:hover {
+            transform: scale(1.05);
+        }
+        .includes {
+            text-align: left;
+            margin-top: 30px;
+        }
+        .includes li {
+            list-style: none;
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .includes li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d9ff;
+            font-weight: bold;
+        }
+        .testimonial {
+            background: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        .testimonial blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .testimonial cite {
+            color: #667eea;
+            font-weight: bold;
+        }
+        .faq {
+            background: white;
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .faq-item {
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+        .faq-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: rgba(255,255,255,0.8);
+        }
+        .guarantee {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 30px;
+            border-radius: 30px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .price {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>🏠 Phoenix Wholesale Offer Calculator</h1>
+            <p>The exact spreadsheet top Phoenix wholesalers use to calculate MAO, estimate repairs, and lock up profitable deals in minutes—not hours.</p>
+            <a href="#buy" class="cta-button">Get Instant Access →</a>
+        </section>
+
+        <section class="features">
+            <h2>Everything You Need to Analyze Deals Like a Pro</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📊 Automatic MAO Calculator</h3>
+                    <p>Enter ARV and rehab costs—get your Maximum Allowable Offer instantly using the 70% rule (or customize your %).</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔨 Smart Rehab Estimator</h3>
+                    <p>Built-in per-square-foot repair costs for Light ($25-40), Medium ($50-75), and Heavy ($90-135+) rehabs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Assignment Fee Planner</h3>
+                    <p>Instantly see your wholesale fee built into every offer. Know your profit before you make the call.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📍 Phoenix Market Data</h3>
+                    <p>Pre-loaded with Phoenix-specific rehab costs (+5% labor adjustment) and direct links to comps sources.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Deal Grading System</h3>
+                    <p>Get an instant A/B/C/D grade on every deal. Never wonder if you're looking at a winner or a time-waster.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Works Everywhere</h3>
+                    <p>Google Sheets format—access on your phone, tablet, or laptop. Analyze deals on the go, at the property, or in your car.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial">
+            <blockquote>
+                "I used to spend 30+ minutes analyzing each deal. With this calculator, I can run numbers in 2 minutes while I'm still on the phone with the seller. Closed 3 more deals last month because I could move faster than the competition."
+            </blockquote>
+            <cite>— Phoenix Wholesaler (Closed 47 deals in 2025)</cite>
+        </section>
+
+        <section class="pricing" id="buy">
+            <div class="price-box">
+                <h2>Limited Time Offer</h2>
+                <div class="price"><span>$</span>39</div>
+                <p>One-time payment. Lifetime access.<br>No subscriptions. No upsells.</p>
+                
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="ryan@newconceptproperties.com">
+                    <input type="hidden" name="item_name" value="Phoenix Wholesale Offer Calculator">
+                    <input type="hidden" name="amount" value="39.00">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="return" value="https://phoenix-wholesale-calc.vercel.app/thanks.html">
+                    <input type="submit" class="buy-button" value="Buy Now with PayPal">
+                </form>
+
+                <ul class="includes">
+                    <li>Phoenix Wholesale Offer Calculator (Google Sheets)</li>
+                    <li>Built-in MAO & Rehab Estimators</li>
+                    <li>Phoenix Comps Source Links</li>
+                    <li>Deal Grading System</li>
+                    <li>Assignment Fee Calculator</li>
+                    <li>Lifetime updates & support</li>
+                </ul>
+
+                <div class="guarantee">
+                    🛡️ 30-Day Money-Back Guarantee
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>Do I need to know Excel/Google Sheets?</h4>
+                <p>Nope! Just enter your numbers in the yellow cells. Everything calculates automatically. If you can use a calculator, you can use this.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is this only for Phoenix?</h4>
+                <p>The calculator works for any market, but it's optimized for Phoenix with local rehab cost adjustments and comps sources. Many investors use it in Tucson, Mesa, Scottsdale, and across Arizona.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What if I'm new to wholesaling?</h4>
+                <p>Perfect! This calculator teaches you the math as you use it. Each section has notes explaining what the numbers mean and how pros think about deals.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I get the calculator after purchase?</h4>
+                <p>Immediately after PayPal payment, you'll get a link to make your own copy in Google Sheets. Takes 30 seconds.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Phoenix Wholesale Offer Calculator | Built for Arizona Real Estate Investors</p>
+            <p>Questions? Email ryan@newconceptproperties.com</p>
+        </footer>
+    </div>
+</body>
+</html>

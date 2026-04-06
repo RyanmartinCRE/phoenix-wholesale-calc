@@ -1,0 +1,9 @@
+{
+  "name": "phoenix-wholesale-calc",
+  "version": "1.0.0",
+  "description": "Phoenix Wholesale Offer Calculator Landing Page",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  }
+}
