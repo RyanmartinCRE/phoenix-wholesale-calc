@@ -1,0 +1,170 @@
+Phoenix Wholesale Offer Calculator - Google Sheets Template
+=============================================================
+
+COPY THIS STRUCTURE TO CREATE YOUR GOOGLE SHEETS CALCULATOR:
+
+STEP 1: Create a new Google Sheet
+STEP 2: Rename it to "Phoenix Wholesale Offer Calculator"
+STEP 3: Set up the following tabs:
+
+---
+
+TAB 1: DEAL CALCULATOR
+
+Cell A1: PHOENIX WHOLESALE OFFER CALCULATOR
+Cell A3: 📍 PROPERTY INPUTS
+Cell A4: Property Address
+Cell A5: Square Footage
+Cell A6: After Repair Value (ARV)
+Cell A7: Rehab Level
+Cell A8: ARV Discount %
+Cell A9: Assignment Fee Target
+Cell A10: Contingency %
+
+Cell B4: [USER INPUT - Text]
+Cell B5: [USER INPUT - Number: 1500]
+Cell B6: [USER INPUT - Currency: 400000]
+Cell B7: [USER INPUT - Dropdown: Light,Medium,Heavy]
+Cell B8: [USER INPUT - Percentage: 0.70]
+Cell B9: [USER INPUT - Currency: 10000]
+Cell B10: [USER INPUT - Percentage: 0.15]
+
+Cell A12: 📊 CALCULATED OUTPUTS
+Cell A13: Rehab Cost per Sq Ft
+Cell A14: Base Rehab Estimate
+Cell A15: Rehab + Contingency
+Cell A16: MAO (Maximum Allowable Offer)
+Cell A17: Suggested Initial Offer (85%)
+Cell A18: Suggested Max Offer (95%)
+Cell A19: Your Assignment Fee
+Cell A20: Buyer All-In Cost
+Cell A21: Buyer Potential Profit
+
+Cell B13: =IF(B7="Light",32.5,IF(B7="Medium",62.5,112.5))
+Cell B14: =B5*B13
+Cell B15: =B14*(1+B10)
+Cell B16: =(B6*B8)-B15-B9
+Cell B17: =B16*0.85
+Cell B18: =B16*0.95
+Cell B19: =B9
+Cell B20: =B16+B9+B15
+Cell B21: =B6-B20
+
+Cell A23: 🎯 DEAL GRADE
+Cell A24: Grade
+Cell A25: Recommendation
+
+Cell B24: =IF(B16/B6>=0.5,"A - EXCELLENT",IF(B16/B6>=0.4,"B - GOOD",IF(B16/B6>=0.3,"C - FAIR","D - POOR")))
+Cell B25: =IF(B24="A - EXCELLENT","MAKE OFFER IMMEDIATELY",IF(B24="B - GOOD","STRONG DEAL - PROCEED",IF(B24="C - FAIR","NEGOTIATE HARD OR PASS","PASS - MARGINS TOO TIGHT")))
+
+---
+
+TAB 2: REHAB REFERENCE
+
+Cell A1: REHAB COST REFERENCE (Phoenix 2026)
+Cell A3: Level
+Cell B3: Low $/sqft
+Cell C3: High $/sqft
+Cell D3: Avg $/sqft
+Cell E3: Scope
+
+Row 4: Light | 25 | 40 | 32.50 | Paint, flooring, fixtures, landscaping
+Row 5: Medium | 50 | 75 | 62.50 | + Kitchen, baths, windows, minor systems
+Row 6: Heavy | 90 | 135 | 112.50 | Full gut, studs, all systems, structural
+
+Cell A9: LINE ITEM ESTIMATES
+Cell A10: Item
+Cell B10: Low
+Cell C10: High
+
+Row 11: New Roof | 8000 | 15000
+Row 12: HVAC Replacement | 7500 | 12000
+Row 13: Kitchen Remodel | 15000 | 30000
+Row 14: Full Bath Remodel | 6000 | 12000
+Row 15: Flooring (LVP per sqft) | 4.50 | 7
+Row 16: Interior Paint (per sqft) | 2.50 | 4
+Row 17: Electrical Panel | 2000 | 4000
+Row 18: Water Heater | 1200 | 2500
+
+---
+
+TAB 3: PHOENIX COMPS
+
+Cell A1: PHOENIX COMPS SOURCES
+Cell A3: FREE RESOURCES
+Cell A4: Source
+Cell B4: URL
+Cell C4: Use For
+
+Row 5: Redfin Phoenix | https://www.redfin.com/city/14240/AZ/Phoenix | Sold comps, price trends
+Row 6: Zillow Phoenix | https://www.zillow.com/phoenix-az | Zestimates, sold data
+Row 7: Maricopa Assessor | https://mcassessor.maricopa.gov | Public records, tax info
+
+Cell A10: PAID RESOURCES
+Cell A11: Source
+Cell B11: Cost
+Cell C11: Best For
+
+Row 12: PropStream | $99/mo | Investor comps, skip tracing
+Row 13: BatchLeads | $59/mo | List stacking, motivated sellers
+Row 14: REsimpli | $99/mo | All-in-one investor CRM
+
+---
+
+TAB 4: MAO GUIDE
+
+Cell A1: MAO FORMULA GUIDE
+Cell A3: THE FORMULA
+Cell A4: MAO = (ARV × Discount %) - Repair Costs - Assignment Fee
+
+Cell A6: EXAMPLE DEAL WALKTHROUGH
+Cell A7: Property: 3BR/2BA, 1,400 sqft, Phoenix
+Cell A8: ARV: $350,000
+Cell A9: Rehab Level: Medium
+Cell A10: Assignment Fee: $8,000
+
+Cell A12: CALCULATION:
+Cell A13: Step 1: ARV × 70%
+Cell B13: $245,000
+Cell A14: Step 2: Repair Cost (1,400 × $62.50)
+Cell B14: $87,500
+Cell A15: Step 3: Repairs + 15% Contingency
+Cell B15: $100,625
+Cell A16: Step 4: MAO
+Cell B16: $136,375
+Cell A17: Step 5: Suggested Offer (85% of MAO)
+Cell B17: $115,919
+
+Cell A20: DEAL GRADING
+Cell A21: Grade | Margin | Action
+Row 22: A | 50%+ | Make offer immediately
+Row 23: B | 40-50% | Strong deal - proceed
+Row 24: C | 30-40% | Negotiate hard
+Row 25: D | <30% | Pass or lowball
+
+---
+
+TAB 5: BUYER NETWORK
+
+Cell A1: WHOLESALE BUYER TRACKING
+Cell A3: Name
+Cell B3: Phone
+Cell C3: Email
+Cell D3: Buy Box
+Cell E3: Notes
+
+Row 4: [Sample] | (555) 123-4567 | buyer@email.com | $100K-$200K, C class | Cash buyer, closes fast
+
+Cell A7: PHOENIX INVESTOR GROUPS
+Cell A8: AZREIA (Arizona Real Estate Investors Association)
+Cell A9: Phoenix Real Estate Investors Meetup
+Cell A10: Tucson Real Estate Investors Facebook Group
+
+---
+
+FORMATTING NOTES:
+- Highlight all INPUT cells (B4:B10) in YELLOW
+- Format currency cells with $ and commas
+- Format percentage cells with %
+- Make output cells (B13:B21) read-only or protected
+- Use conditional formatting on Deal Grade (A=green, B=yellow, C=orange, D=red)
